@@ -27,7 +27,7 @@ public class PlosQuad extends GLCanvas implements GLEventListener, MouseListener
     private GLU glu;
 
     /** The frames per second setting. */
-    private int fps = 400;
+    private int fps = 500;
     //private float cX = -10, cY = 5, cZ = -20;
     private float eX = 0, eY = 0, eZ = 0;
     private double alpha = 0;

@@ -56,6 +56,7 @@ private int rastCount;
 private Random r = new Random();
 //private Rast[] rast = new Rast[10];
 ArrayList <Rast> rast = new ArrayList(10);
+ArrayList <zver1> zv = new ArrayList(10);
   
 
     /**
@@ -117,11 +118,11 @@ ArrayList <Rast> rast = new ArrayList(10);
         frames = 0;
         textRenderer = new TextRenderer(new Font("Default", Font.PLAIN, 20));
         for(int i = 0; i < zvNum; i++){
-            zv[i] = new zver1();
+            zv.add(new zver1());
             
         }
         if(zvNum > 0)
-            zv[0].setGran(m, n);
+            zv.get(0).setGran(m, n);
         //char[][] s = new char[m][n];
         System.out.println(gl.glGetString(gl.GL_VENDOR));
         System.out.println(gl.glGetString(gl.GL_RENDERER));
@@ -134,7 +135,7 @@ ArrayList <Rast> rast = new ArrayList(10);
         }
         rastCount = 0;
     }
-    zver1 zv[] = new zver1[zvNum];
+    
     Surface surf1 = new Surface(m, n);
     int mainMatr[][] = new int[m][n];
     /**
@@ -154,7 +155,7 @@ ArrayList <Rast> rast = new ArrayList(10);
         
         if(t1 - t2 >= 100){
             for(int i = 0; i < zvNum; i++)
-                zv[i].doTurn(mainMatr);
+                zv.get(i).doTurn(mainMatr);
             t2 = t1;
         }
         if (t1 - t0 >= 1000) {
@@ -192,7 +193,7 @@ ArrayList <Rast> rast = new ArrayList(10);
         textRenderer.endRendering();
         surf1.draw1(gl);
         for(int i = 0; i < zvNum; i++)
-            zv[i].draw1(gl, t1 - t2);
+            zv.get(i).draw1(gl, t1 - t2);
         for(int i = 0; i <rast.size(); i++){
             rast.get(i).draw1(gl);
         }
@@ -200,7 +201,7 @@ ArrayList <Rast> rast = new ArrayList(10);
         gl.glPolygonMode(gl.GL_FRONT_AND_BACK, gl.GL_LINE);
         surf1.draw2(gl);
         for(int i = 0; i < zvNum; i++)
-            zv[i].draw2(gl);
+            zv.get(i).draw2(gl);
         for(int i = 0; i < rast.size(); i++)
             rast.get(i).draw2(gl);
     }

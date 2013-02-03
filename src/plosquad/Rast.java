@@ -15,7 +15,7 @@ public class Rast {
     public Rast(int [][] matr, int i, int j){
         cf[0] = i;
         cf[1] = j;
-        matr[i][j] = 2;
+        matr[i][j] = 1;
     }
     public void draw1(GL gl){
         //Для плавного движения
@@ -54,5 +54,12 @@ public class Rast {
         gl.glVertex3i(cf[0], cf[1], 0);
         gl.glVertex3i(cf[0], cf[1], 1);
         gl.glEnd();
+    }
+    
+    public int doTurn(int mm[][]){
+        if(mm[cf[0]][cf[1]] == 1)
+            return 0;
+        else
+            return 1;
     }
 }

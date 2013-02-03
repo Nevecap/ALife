@@ -56,7 +56,7 @@ private int rastCount;
 private Random r = new Random();
 //private Rast[] rast = new Rast[10];
 ArrayList <Rast> rast = new ArrayList(10);
-ArrayList <zver1> zv = new ArrayList(10);
+ArrayList <Herb> zv = new ArrayList(10);
   
 
     /**
@@ -118,7 +118,7 @@ ArrayList <zver1> zv = new ArrayList(10);
         frames = 0;
         textRenderer = new TextRenderer(new Font("Default", Font.PLAIN, 20));
         for(int i = 0; i < zvNum; i++){
-            zv.add(new zver1());
+            zv.add(new Herb());
             
         }
         if(zvNum > 0)
@@ -156,6 +156,13 @@ ArrayList <zver1> zv = new ArrayList(10);
         if(t1 - t2 >= 100){
             for(int i = 0; i < zvNum; i++)
                 zv.get(i).doTurn(mainMatr);
+            for(int j = 0; j < rast.size(); j++){
+                int rn = rast.get(j).doTurn(mainMatr);
+                if(rn == 1){
+                    rast.remove(j);
+                    j--;//Следующий встаёт на место удалённого
+                }
+            }
             t2 = t1;
         }
         if (t1 - t0 >= 1000) {

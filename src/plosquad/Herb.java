@@ -7,7 +7,7 @@ package plosquad;
 import java.util.Random;
 import javax.media.opengl.GL;
 
-public class zver1 {
+public class Herb {
     static int rg = 1, lg = 1;
     public void setGran(int i, int j){
         rg = j;
@@ -60,11 +60,11 @@ public class zver1 {
         gl.glVertex3f(cf[0], cf[1], 1);
         gl.glEnd();
     }
-    public void doTurn(int mm[][]){
+    public int doTurn(int mm[][]){
         Boolean out = false;
         //Если нет возможности хода, остаёмся на месте
         if(!canMove(mm, c[0], c[1]))
-            return;
+            return 2;//Двигаться некуда
         //co - предыдущие координаты, c - текущие
         co[0] = c[0];
         co[1] = c[1];
@@ -91,10 +91,11 @@ public class zver1 {
                 out = true;
             }
             oldHod = hod;
+            
         }
-        
         mm[co[0]][co[1]] = 0;
-        mm[c[0]][c[1]] = 1;
+        mm[c[0]][c[1]] = 10;
+        return 0;//Ход завершён успешно
     }
     protected void computeCoord(long ms){
         cf[0] = (c[0] - co[0]) * (ms / 100f) + co[0];
@@ -127,7 +128,7 @@ public class zver1 {
     }
     //проверка доступности ячейки матрицы для перехода
     private Boolean checkMatr(int mm[][], int i, int j){
-        if(mm[i][j] == 0)
+        if(mm[i][j] == 0 || mm[i][j] == 1)
             return true;
         else
             return false;

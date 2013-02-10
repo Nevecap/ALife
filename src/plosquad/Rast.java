@@ -19,7 +19,10 @@ public class Rast {
     }
     public void draw1(GL gl){
         //Для плавного движения
-        gl.glColor3f(0.2f, 0.7f, 0.2f);
+        float[] rgba = {0.2f, 0.7f, 0.2f};
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         gl.glBegin(GL.GL_QUAD_STRIP);
         gl.glVertex3i(cf[0], cf[1], 0);
         gl.glVertex3i(cf[0], cf[1], 1);
@@ -41,7 +44,10 @@ public class Rast {
     } 
     //Прорисовка контуров квадтаров
     public void draw2(GL gl){
-        gl.glColor3f(0.1f, 0.5f, 0.1f);
+        float[] rgba = {0.1f, 0.5f, 0.1f};
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         gl.glBegin(GL.GL_QUAD_STRIP);
         gl.glVertex3i(cf[0], cf[1], 0);
         gl.glVertex3i(cf[0], cf[1], 1);

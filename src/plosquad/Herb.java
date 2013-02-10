@@ -24,7 +24,11 @@ public class Herb {
         //c[1] = ((cf[1] - co[1]) * (int)ms / 500) + co[1];
         //Для плавного движения
         computeCoord(ms);
-        gl.glColor3f(0.5f, 0.5f, 0.7f);
+       // gl.glColor3f(0.5f, 0.5f, 0.7f);
+        float[] rgba = {0.5f, 0.5f, 0.7f};
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         gl.glBegin(GL.GL_QUAD_STRIP);
         gl.glVertex3f(cf[0], cf[1], 0);
         gl.glVertex3f(cf[0], cf[1], 1);
@@ -46,7 +50,11 @@ public class Herb {
     } 
     //Прорисовка контуров квадтаров
     public void draw2(GL gl){
-        gl.glColor3f(0.4f, 0.4f, 0.5f);
+       // gl.glColor3f(0.4f, 0.4f, 0.5f);
+        float[] rgba = {0.4f, 0.4f, 0.5f};
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         gl.glBegin(GL.GL_QUAD_STRIP);
         gl.glVertex3f(cf[0], cf[1], 0);
         gl.glVertex3f(cf[0], cf[1], 1);

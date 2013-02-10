@@ -21,7 +21,11 @@ public class Surface {
     }
     public void draw1(GL gl){
         ots = 0.02f;
-        gl.glColor3f(0.9f, 0.8f, 0.2f);
+        //gl.glColor3f(0.9f, 0.8f, 0.2f);
+        float[] rgba = {0.9f, 0.8f, 0.2f};
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         for(int i = 0; i < M - 1; i++){
             gl.glBegin(GL.GL_QUAD_STRIP);
             for(int j = 0; j < N; j++){
@@ -30,7 +34,11 @@ public class Surface {
             }
             gl.glEnd();
         }
-        gl.glColor3f(0.9f, 0.8f, 0.2f);
+        //gl.glColor3f(0.9f, 0.8f, 0.2f);
+        //float[] rgba2 = {0.9f, 0.8f, 0.2f};
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         //Далее рисуем бортики
         gl.glBegin(GL.GL_QUAD_STRIP);
         for(int i = 0; i < M; i++){
@@ -57,7 +65,11 @@ public class Surface {
     }
     public void draw2(GL gl){
         ots = 0.04f;
-        gl.glColor3f(0.9f, 0.1f, 0.1f);
+        //gl.glColor3f(0.9f, 0.1f, 0.1f);
+        float[] rgba = {0.9f, 0.1f, 0.1f};
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+        gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+        gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
         for(int i = 0; i < M - 1; i++){
             gl.glBegin(GL.GL_QUAD_STRIP);
             for(int j = 0; j < N; j++){

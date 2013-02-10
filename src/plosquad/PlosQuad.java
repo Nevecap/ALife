@@ -148,6 +148,7 @@ ArrayList <Herb> zv = new ArrayList(10);
         if (!animator.isAnimating()) {
             return;
         }
+        
         final GL gl = drawable.getGL();
         frames++;
         t1 = System.currentTimeMillis();
@@ -185,7 +186,28 @@ ArrayList <Herb> zv = new ArrayList(10);
         }
         // Clear screen.
         gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-        
+        // Prepare light parameters.
+        float SHINE_ALL_DIRECTIONS = 1;
+        float[] lightPos = {-30, 100, 100, SHINE_ALL_DIRECTIONS};
+        float[] lightColorAmbient = {0.2f, 0.2f, 0.2f, 1f};
+        float[] lightColorSpecular = {0.8f, 0.8f, 0.8f, 1f};
+
+        // Set light parameters.
+        gl.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, lightPos, 0);
+        gl.glLightfv(GL.GL_LIGHT1, GL.GL_AMBIENT, lightColorAmbient, 0);
+        gl.glLightfv(GL.GL_LIGHT1, GL.GL_SPECULAR, lightColorSpecular, 0);
+
+        // Enable lighting in GL.
+        gl.glEnable(GL.GL_LIGHT1);
+        gl.glEnable(GL.GL_LIGHTING);
+
+        // Set material properties.
+       /// float[] rgba = {0.3f, 0.5f, 1f};
+       // gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
+       // gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
+       // gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
+        //float[] norm = {0.0f, 0.0f, -1.0f}; 
+        //gl.glNormal3fv(norm, 2);
         // Set camera.
         setCamera(gl, glu, 
                 eX + (float) (R * Math.sin(view_rotx) * Math.sin(view_roty)),//x
@@ -207,10 +229,10 @@ ArrayList <Herb> zv = new ArrayList(10);
   
         gl.glPolygonMode(gl.GL_FRONT_AND_BACK, gl.GL_LINE);
         surf1.draw2(gl);
-        for(int i = 0; i < zvNum; i++)
-            zv.get(i).draw2(gl);
-        for(int i = 0; i < rast.size(); i++)
-            rast.get(i).draw2(gl);
+        //for(int i = 0; i < zvNum; i++)
+           // zv.get(i).draw2(gl);
+        //for(int i = 0; i < rast.size(); i++)
+            //rast.get(i).draw2(gl);
     }
 
     /**

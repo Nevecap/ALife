@@ -188,9 +188,9 @@ ArrayList <Herb> zv = new ArrayList(10);
         gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
         // Prepare light parameters.
         float SHINE_ALL_DIRECTIONS = 1;
-        float[] lightPos = {-30, 100, 100, SHINE_ALL_DIRECTIONS};
-        float[] lightColorAmbient = {0.2f, 0.2f, 0.2f, 1f};
-        float[] lightColorSpecular = {0.8f, 0.8f, 0.8f, 1f};
+        float[] lightPos = {-100, 100, 100, SHINE_ALL_DIRECTIONS};
+        float[] lightColorAmbient = {0.2f, 0.2f, 0.2f, 0.5f};
+        float[] lightColorSpecular = {0.8f, 0.8f, 0.8f, 0.5f};
 
         // Set light parameters.
         gl.glLightfv(GL.GL_LIGHT1, GL.GL_POSITION, lightPos, 0);

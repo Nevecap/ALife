@@ -43,21 +43,25 @@ public class Surface {
         //Далее рисуем бортики
         gl.glBegin(GL.GL_QUAD_STRIP);
         for(int i = 0; i < M; i++){
+            gl.glNormal3i(0, 1, 0);
             gl.glVertex3f(i, -ots, 0);
             gl.glVertex3f(i, -ots, 0.5f);
         }
         
         for(int j = 0; j < N; j++){
+            gl.glNormal3i(-1, 0, 0);
             gl.glVertex3f(M - 1 + ots, j, 0);
             gl.glVertex3f(M - 1 + ots, j, 0.5f);
         }
 
         for(int i = M - 1; i > -1; i--){
+            gl.glNormal3i(0, 1, 0);
             gl.glVertex3f(i, N - 1 + ots, 0);
             gl.glVertex3f(i,  N - 1 + ots, 0.5f);
         }
         
         for(int j = N - 1; j > -1; j--){
+            gl.glNormal3i(-1, 0, 0);
             gl.glVertex3f(-ots, j, 0);
             gl.glVertex3f(-ots, j, 0.5f);
         }

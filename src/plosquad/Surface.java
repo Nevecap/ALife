@@ -29,6 +29,7 @@ public class Surface {
         for(int i = 0; i < M - 1; i++){
             gl.glBegin(GL.GL_QUAD_STRIP);
             for(int j = 0; j < N; j++){
+                gl.glNormal3i(0, 0, 1);
                 gl.glVertex3i(i, j, 0);
                 gl.glVertex3i(i + 1, j, 0);
             }

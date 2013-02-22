@@ -96,7 +96,7 @@ ArrayList <Herb> zv = new ArrayList(10);
         // Enable z- (depth) buffer for hidden surface removal. 
         gl.glEnable(GL.GL_DEPTH_TEST);
         gl.glDepthFunc(GL.GL_LEQUAL);
-
+        gl.glEnable(gl.GL_NORMALIZE);
         // Enable smooth shading.
         gl.glShadeModel(GL.GL_SMOOTH);
 

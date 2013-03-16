@@ -29,33 +29,46 @@ public class Herb {
         gl.glMaterialfv(GL.GL_FRONT, GL.GL_AMBIENT, rgba, 0);
         gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
         gl.glMaterialf(GL.GL_FRONT, GL.GL_SHININESS, 0.5f);
-        gl.glBegin(GL.GL_QUAD_STRIP);
-        gl.glNormal3f(-1f, -1f, 0f);
+        
+        
+        
+         gl.glBegin(GL.GL_QUADS);
+       
+        gl.glNormal3f(0f, 1f, 0f);
         gl.glVertex3f(cf[0], cf[1], 0);
-        gl.glNormal3f(-1f, -1f, 1f);
-        gl.glVertex3f(cf[0], cf[1], 1);
-        gl.glNormal3f(1f, -1f, 0f);
         gl.glVertex3f(cf[0] + 1, cf[1], 0);
-        gl.glNormal3f(1f, -1f, 1f);
         gl.glVertex3f(cf[0] + 1, cf[1], 1);
-        gl.glNormal3f(1f, 1f, 0f);
+        gl.glVertex3f(cf[0], cf[1], 1);
+          
+        
+  
+        gl.glNormal3f(1f, 0f, 0f);
+        gl.glVertex3f(cf[0] + 1, cf[1], 0);
         gl.glVertex3f(cf[0] + 1, cf[1] + 1, 0);
-        gl.glNormal3f(1f, 1f, 1f);
         gl.glVertex3f(cf[0] + 1, cf[1] + 1, 1);
-        gl.glNormal3f(-1f, 1f, 0f);
+        gl.glVertex3f(cf[0] + 1, cf[1], 1);
+        
+    
+        gl.glNormal3f(0f, -1f, 0f);
+        gl.glVertex3f(cf[0] + 1, cf[1] + 1, 0);
         gl.glVertex3f(cf[0], cf[1] + 1, 0);
-        gl.glNormal3f(-1f, 1f, 1f);
         gl.glVertex3f(cf[0], cf[1] + 1, 1);
-        gl.glNormal3f(-1f, -1f, 0f);
+        gl.glVertex3f(cf[0] + 1, cf[1] + 1, 1);
+        
+        
+        gl.glNormal3f(-1f, 0f, 0f);
+        gl.glVertex3f(cf[0], cf[1] + 1, 0);
         gl.glVertex3f(cf[0], cf[1], 0);
-        gl.glNormal3f(-1f, -1f, 1f);
         gl.glVertex3f(cf[0], cf[1], 1);
-        gl.glEnd();
-        gl.glBegin(GL.GL_QUADS);
+        gl.glVertex3f(cf[0], cf[1] + 1, 1);
+        
+        gl.glNormal3f(0f, 0f, 1f);
         gl.glVertex3f(cf[0], cf[1], 1);
         gl.glVertex3f(cf[0] + 1, cf[1], 1);
         gl.glVertex3f(cf[0] + 1, cf[1] + 1, 1);
         gl.glVertex3f(cf[0], cf[1] + 1, 1);
+        
+    
         gl.glEnd();
     } 
     //Прорисовка контуров квадтаров

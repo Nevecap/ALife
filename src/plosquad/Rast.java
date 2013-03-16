@@ -26,22 +26,26 @@ public class Rast {
       
         gl.glBegin(GL.GL_QUADS);
        
-        gl.glNormal3f(-1f, -1f, 0f);
+        gl.glNormal3f(0f, 1f, 0f);
+      //  gl.glNormal3f(-1f, -1f, -1f);
         gl.glVertex3i(cf[0], cf[1], 0);
-        gl.glNormal3f(1f, -1f, 0f);
+      //  gl.glNormal3f(1f, -1f, -1f);
         gl.glVertex3i(cf[0] + 1, cf[1], 0);
-        gl.glNormal3f(1f, -1f, 0f);
+       // gl.glNormal3f(1f, -1f, 1f);
         gl.glVertex3i(cf[0] + 1, cf[1], 1);
-        
-        gl.glNormal3f(-1f, -1f, 0f);
+      //  gl.glNormal3f(-1f, -1f, 1f);
         gl.glVertex3i(cf[0], cf[1], 1);
           
         
   
-     
-        /*gl.glNormal3f(1f, -1f, 0f);
+        gl.glNormal3f(1f, 0f, 0f);
+     //   gl.glNormal3f(1f, -1f, -1f);
         gl.glVertex3i(cf[0] + 1, cf[1], 0);
-        gl.glNormal3f(1f, -1f, 0f);
+      //  gl.glNormal3f(1f, 1f, -1f);
+        gl.glVertex3i(cf[0] + 1, cf[1] + 1, 0);
+     //   gl.glNormal3f(1f, 1f, 1f);
+        gl.glVertex3i(cf[0] + 1, cf[1] + 1, 1);
+      //  gl.glNormal3f(1f, -1f, 1f);
         gl.glVertex3i(cf[0] + 1, cf[1], 1);
         
      
@@ -50,9 +54,14 @@ public class Rast {
      //   rgba[1] = 1f;
      //   rgba[2] = 1f;
     ///    gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0); 
-        gl.glNormal3f(1f, 1f, 0f);
+    //    gl.glNormal3f(1f, 1f, -1f);
+        gl.glNormal3f(0f, -1f, 0f);
         gl.glVertex3i(cf[0] + 1, cf[1] + 1, 0);
-        gl.glNormal3f(1f, 1f, 0f);
+    //    gl.glNormal3f(-1f, 1f, -1f);
+        gl.glVertex3i(cf[0], cf[1] + 1, 0);
+    //    gl.glNormal3f(-1f, 1f, 1f);
+        gl.glVertex3i(cf[0], cf[1] + 1, 1);
+     //   gl.glNormal3f(1f, 1f, 1f);
         gl.glVertex3i(cf[0] + 1, cf[1] + 1, 1);
         
         //   rgba[1] = 0.7f;
@@ -60,19 +69,32 @@ public class Rast {
        // rgba[2] = 0.2f;
         
        // gl.glMaterialfv(GL.GL_FRONT, GL.GL_SPECULAR, rgba, 0);
-        gl.glNormal3f(-1f, 1f, 0f);
+    //    gl.glNormal3f(-1f, 1f, -1f);
+        gl.glNormal3f(-1f, 0f, 0f);
         gl.glVertex3i(cf[0], cf[1] + 1, 0);
-        gl.glNormal3f(-1f, 1f, 0f);
+     //   gl.glNormal3f(-1f, -1f, -1f);
+        gl.glVertex3i(cf[0], cf[1], 0);
+    //    gl.glNormal3f(-1f, -1f, 1f);
+        gl.glVertex3i(cf[0], cf[1], 1);
+     //   gl.glNormal3f(-1f, 1f, 1f);
         gl.glVertex3i(cf[0], cf[1] + 1, 1);
         
-        
-        gl.glNormal3f(-1f, -1f, 0f);
-        gl.glVertex3i(cf[0], cf[1], 0);
-        gl.glNormal3f(-1f, -1f, 0f);
+        gl.glNormal3f(0f, 0f, 1f);
+    //    gl.glNormal3f(-1f, -1f, 1f);
         gl.glVertex3i(cf[0], cf[1], 1);
+    //    gl.glNormal3f(1f, -1f, 1f);
+        gl.glVertex3i(cf[0] + 1, cf[1], 1);
+     //   gl.glNormal3f(1f, 1f, 1f);
+        gl.glVertex3i(cf[0] + 1, cf[1] + 1, 1);
+     //   gl.glNormal3f(-1f, 1f, 1f);
+        gl.glVertex3i(cf[0], cf[1] + 1, 1);
+     //   gl.glNormal3f(-1f, -1f, 1f);
+      //  gl.glVertex3i(cf[0], cf[1], 1);*/
+        
+    
         gl.glEnd();
         
-        gl.glBegin(GL.GL_QUADS);
+        /*gl.glBegin(GL.GL_QUADS);
         gl.glNormal3f(-1f, -1f, 1f);
         gl.glVertex3i(cf[0], cf[1], 1);
         gl.glNormal3f(1f, -1f, 1f);
@@ -83,7 +105,7 @@ public class Rast {
         gl.glVertex3i(cf[0], cf[1] + 1, 1);
      //   gl.glNormal3f(-1f, -1f, 1f);
       //  gl.glVertex3i(cf[0], cf[1], 1);*/
-        gl.glEnd();
+      //  gl.glEnd();
     } 
     //Прорисовка контуров квадтаров
     public void draw2(GL gl){

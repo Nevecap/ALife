@@ -155,8 +155,8 @@ ArrayList <Herb> zv = new ArrayList(10);
         
         
         if(t1 - t2 >= 100){
-            for(int i = 0; i < zvNum; i++)
-                zv.get(i).doTurn(mainMatr);
+            //for(int i = 0; i < zvNum; i++)
+                //zv.get(i).doTurn(mainMatr);
             for(int j = 0; j < rast.size(); j++){
                 int rn = rast.get(j).doTurn(mainMatr);
                 if(rn == 1){
@@ -188,7 +188,7 @@ ArrayList <Herb> zv = new ArrayList(10);
         gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
         // Prepare light parameters.
         float SHINE_ALL_DIRECTIONS = 1;
-        float[] lightPos = {-100, 100, 100, SHINE_ALL_DIRECTIONS};
+        float[] lightPos = {50, -100, 80, SHINE_ALL_DIRECTIONS};
         float[] lightColorAmbient = {0.2f, 0.2f, 0.2f, 0.5f};
         float[] lightColorSpecular = {0.8f, 0.8f, 0.8f, 0.5f};
 
